@@ -1,6 +1,6 @@
 {
   "name": "sublime-import-cost",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Sublime Text 3 plugin that shows the import costs of imported JS modules. Forked version of julianburr/sublime-import-cost.",
   "keywords": [
     "import cost",
