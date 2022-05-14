@@ -1,1 +1,19 @@
+# General
 node_modules
+
+# Logs
+**/*.log
+
+# OS-specific files
+.DS_Store
+.fseventsd
+.Trashes
+Thumbs.db
+$RECYCLE.BIN/
+*.lnk
+*~
+.Trash-*
+.nfs*
+
+# IDE
+*.sublime-workspace
