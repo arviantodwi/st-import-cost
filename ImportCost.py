@@ -13,7 +13,7 @@ SETTINGS_FILE = '{0}.sublime-settings'.format(PLUGIN_NAME)
 
 PLUGIN_NODE_PATH = Path.join(
   Path.dirname(Path.realpath(__file__)),
-  'import-cost.js'
+  'provider.js'
 )
 
 cache = {}
@@ -46,7 +46,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     es5 = self.view.find_all(
       r'''require\(\s*['"](.+?)['"]\s*\)''', 0, r"$1", modules
     )
-    print(modules)
+    print("modules: %s" % (modules))
     return [es6 + es5, modules]
 
   def calc_imports(self, imports):
@@ -79,7 +79,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     cnt = 0
     for module in final_data:
       size_data = json_data[cnt]
-      if size_data['size']:
+      if 'size' in size_data and size_data['size'] > 0:
         line = self.view.line(module["region"].a)
 
         # TODO: change to settings
