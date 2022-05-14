@@ -2,7 +2,7 @@
 
 Sublime Text 3 plugin that shows the [import costs](https://github.com/wix/import-cost/) of imported JS modules.
 
-![Example GIF](./example.gif)
+![Example GIF](./assets/example.gif)
 
 ## Install
 
