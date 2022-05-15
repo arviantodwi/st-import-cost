@@ -52,10 +52,16 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     es5 = self.view.find_all(
       r'''require\(\s*['"](.+?)['"]\s*\)''', 0, r"$1", modules
     )
+
+    if self.get_setting('debug', False):
+      print("detected import regions: %s" % [es6 + es5])
+      print("imported modules: %s" % modules)
+
     return [es6 + es5, modules]
 
   def calc_imports(self, imports):
     # TODO: cache modules!
+    # TODO: fix freezing view on initial calculation
     phantoms = []
     lines, modules = imports
 
