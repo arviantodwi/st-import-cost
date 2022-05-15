@@ -25,12 +25,17 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     self.phantoms = sublime.PhantomSet(view)
     self.update_phantoms()
 
-  def on_new_async(self):
+  def on_load_async(self):
     if self.get_setting('check_on_open', True):
       self.update_phantoms()
 
+  def on_post_save_async(self):
+    if self.get_setting('check_on_save_only', True):
+      self.update_phantoms()
+
   def on_modified_async(self):
-    if self.get_setting('check_on_save', True):
+    # TODO: improve detection every time view get modified
+    if not self.get_setting('check_on_save_only', True):
       self.update_phantoms()
 
   def update_phantoms(self):

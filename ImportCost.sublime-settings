@@ -1,6 +1,7 @@
 {
-  // Check import costs of npm modules when saving a file
-  "check_on_save": true,
+  // Check import costs of npm modules only when saving a file.
+  // If false then it will try to get the cost every time file get modified.
+  "check_on_save_only": true,
 
   // Check import costs when opening a file
   "check_on_open": true,
