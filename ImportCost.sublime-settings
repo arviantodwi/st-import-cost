@@ -16,5 +16,8 @@
   "extensions": [ "js", "jsx", "ts", "tsx" ],
 
   // Show gzip size as well
-  "show_gzip": false
+  "show_gzip": false,
+
+  // Show import cost message in console for debugging
+  "debug": false
 }

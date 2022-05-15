@@ -77,9 +77,22 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     json_data = json.loads(data)
 
     cnt = 0
+
+    if self.get_setting('debug', False):
+      print(\
+        '\nImportCost: %s' % \
+        Path.join(Path.dirname(self.view.file_name()), self.view.file_name()) \
+      )
+
     for module in final_data:
       size_data = json_data[cnt]
       if 'size' in size_data and size_data['size'] > 0:
+        if self.get_setting('debug', False):
+          print(\
+            "-> module: %s, size: %s (%s gzipped)" % \
+            (module['module'], size_data['size'], size_data['gzip']) \
+          )
+
         line = self.view.line(module["region"].a)
 
         # TODO: change to settings
