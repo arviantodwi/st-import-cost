@@ -106,7 +106,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
         gziptxt = ''
         if (self.get_setting('show_gzip', False)):
           gzipkb = size_data['gzip'] / 1000
-          gziptxt = '<span style="color: color(%s blend(var(--background) 50%%));">- %.2fkB gzip</span>' % (color, gzipkb)
+          gziptxt = '<span style="color: color(%s blend(var(--background) 66%%));">(gzipped: %.2fkB)</span>' % (color, gzipkb)
 
         phantoms.append(sublime.Phantom(
           sublime.Region(line.b),
