@@ -11,10 +11,8 @@
   ],
   "license": "MIT",
   "bugs": "https://github.com/arviantodwi/sublime-import-cost/issues",
-  "author": "Julian Burr <hello@julianburr.de> (https://www.julianburr.de/)",
-  "contributors": [
-    "Arvianto D. Wicaksono <arvianto.dwi@gmail.com> (https://arviantodwi.github.io/arviantodwi/)"
-  ],
+  "author": "Arvianto D. Wicaksono <arvianto.dwi@gmail.com> (https://arviantodwi.github.io/arviantodwi/)",
+  "contributors": [],
   "dependencies": {
     "import-cost": "^3.2.0",
     "native-fs-adapter": "https://gitpkg.now.sh/wix/import-cost/packages/native-fs-adapter?master",
