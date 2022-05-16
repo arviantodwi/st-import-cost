@@ -60,7 +60,6 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
 
   def calc_imports(self, imports):
     # TODO: cache modules!
-    # TODO: fix freezing view on initial calculation
     phantoms = []
     lines, modules = imports
 
