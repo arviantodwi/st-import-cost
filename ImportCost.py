@@ -46,7 +46,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
     modules = []
     # https://regex101.com/r/AwuYVR/6
     es6 = self.view.find_all(
-      r'''(?:^import(?:(?![\n])\s+)(?:(?:[\"'\s]*(?:[\w*{}\n, ]+)from\s*)?[\"']\s*([@\w\/_-]+)\s*[\"']).*)|(?:(?:var)|(?:const)|(?:let))[\s\w]+=\s*(?:(?:await\s+)?import)[(\"']+([@\w\/_-]+)[)\"']+.*''', 0, r"$1", modules
+      r'''(?:^import(?:(?![\n])\s+)(?:(?:[\"'\s]*(?:[\w*{}\n, ]+)from\s*)?[\"']\s*((?![.]{1,2}\/)[@\w\/_\-\.]+)\s*[\"']).*)|(?:(?:var)|(?:const)|(?:let))[\s\w]+=\s*(?:(?:await\s+)?import)[(\"']+((?![.]{1,2}\/)[@\w\/_\-\.]+)[)\"']+.*''', 0, r"$1", modules
     )
     es5 = self.view.find_all(
       r'''require\(\s*['"](.+?)['"]\s*\)''', 0, r"$1", modules
