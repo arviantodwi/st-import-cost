@@ -1,18 +1,22 @@
 {
   "name": "sublime-import-cost",
-  "version": "0.1.0",
-  "description": "Sublime Text 3 plugin that shows the import costs of imported JS modules. Forked version of julianburr/sublime-import-cost.",
+  "version": "0.1.1",
+  "description": "Sublime Text 3/4 package that shows the cost of imported JS modules. A working version of julianburr/sublime-import-cost.",
   "keywords": [
     "import cost",
     "sublime text",
     "sublime package",
-    "es module",
+    "es6",
+    "es5",
     "js module"
   ],
   "license": "MIT",
   "bugs": "https://github.com/arviantodwi/sublime-import-cost/issues",
   "author": "Arvianto D. Wicaksono <arvianto.dwi@gmail.com> (https://arviantodwi.github.io/arviantodwi/)",
-  "contributors": [],
+  "contributors": [
+    "Julian Burr <hello@julianburr.de> (https://www.julianburr.de)",
+    "Po Chen <chenpaul914@gmail.com> (https://pochen.me/)"
+  ],
   "dependencies": {
     "import-cost": "^3.2.0",
     "native-fs-adapter": "https://gitpkg.now.sh/wix/import-cost/packages/native-fs-adapter?master",
