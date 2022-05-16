@@ -40,8 +40,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
 
   def update_phantoms(self):
     if self.is_file_allowed():
-      imports = self.find_imports()
-      self.calc_imports(imports)
+      sublime.set_timeout_async(lambda: self.calc_imports(self.find_imports()))
 
   def find_imports(self):
     modules = []
@@ -74,7 +73,7 @@ class ImportCostCommand(sublime_plugin.ViewEventListener):
         final_data.append({"region": lines[cnt], "module": module})
       cnt = cnt + 1
 
-    if len(final_modules) is 0:
+    if len(final_modules) == 0:
       return None
 
     args = []
